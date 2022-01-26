@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'coder_chris.urls'
@@ -126,3 +127,4 @@ import django_heroku
 django_heroku.settings(locals())
 
 CORS_ORIGIN_WHITELIST = ( 'https://coder-chris.herokuapp.com', )
+CSRF_TRUSTED_ORIGINS = ["https://coder-chris.herokuapp.com"]
