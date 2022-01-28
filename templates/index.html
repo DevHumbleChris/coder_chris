@@ -330,7 +330,8 @@
             <h4>Backend Development &amp; APIs</h4>
             <h5>December 11, 2021</h5>
             <p><em><i class="fab fa-free-code-camp"></i> freeCodeCamp</em></p>
-            <a href="#" target="_blank"><img src="{% static 'assets/img/freecodecamp.png' %}" alt="freeCodeCamp Certification" class="img-fluid"></a>
+            <a href="#" target="_blank"><img src="{% static 'assets/img/freecodecamp.png' %}"
+                alt="freeCodeCamp Certification" class="img-fluid"></a>
           </div>
         </div>
       </div>
@@ -646,15 +647,15 @@
               <p>+254 7688 79348</p>
             </div>
 
-            <iframe
-              src="https://maps.google.com/maps?q=Bangladesh,%20Mombasa&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            <iframe src="https://maps.google.com/maps?q=Bangladesh,%20Mombasa&t=&z=13&ie=UTF8&iwloc=&output=embed"
               frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
           </div>
 
         </div>
 
         <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <form action="{% url 'portfolio:send_mail' %}" method="POST" role="form" class="php-email-form">
+            {% csrf_token %}
             <div class="row">
               <div class="form-group col-md-6">
                 <label for="name">Your Name</label>
@@ -673,18 +674,10 @@
               <label for="name">Message</label>
               <textarea class="form-control" name="message" rows="10" required></textarea>
             </div>
-            <div class="my-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-            </div>
             <div class="text-center"><button type="submit">Send Message</button></div>
           </form>
         </div>
-
       </div>
-
-    </div>
   </section><!-- End Contact Section -->
 
 </main>
