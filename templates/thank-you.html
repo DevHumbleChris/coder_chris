@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="jumbotron text-center" style="margin-top:200px; margin-bottom:250px;">
+    {% if message %}
     <h1 class="display-3">Thank You!</h1>
-    <p class="lead"><strong>Please check your email</strong> for further instructions on how to complete your account
-        setup.</p>
+    <p class="lead"><strong>{{ message }}</strong> I will respond to you shortly.</p>
     <hr>
+    {% elif error %}
+    <h1 class="display-3 text-danger">An Error Occurred</h1>
+    <p class="lead"><strong>{{ error }}</strong></p>
+    <hr>
+    {% endif %}
     <p class="lead">
         <a class="btn btn-primary btn-lg" href="{% url 'portfolio:home' %}" role="button">Continue To Homepage</a>
     </p>
