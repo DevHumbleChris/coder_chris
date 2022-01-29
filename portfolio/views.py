@@ -3,6 +3,10 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.conf import settings
 from django.core.mail import send_mail
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .serializers import ProjectSerializer
+from .models import Project
 
 def HomeView(request, *args, **kwargs):
     return render(request, 'index.html', {})
@@ -28,3 +32,18 @@ def SendMail(request, *args, **kwargs):
         return render(request, "thank-you.html", {
             "error": e
         })
+
+
+class ProjectApi(APIView):
+    def get(self, request, *args, **kwargs):
+        qs = Project.objects.all()
+        serializer = ProjectSerializer(qs, many=True)
+        return Response(serializer.data)
+
+    def post(self):
+        serializer = ProjectSerializer(data=request.data)
+
+        if serializer.is_valid():
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
