@@ -1,4 +1,5 @@
 from django.db import models
+import socket
 
 class Project(models.Model):
     name = models.CharField(max_length=50)
@@ -15,7 +16,7 @@ class Project(models.Model):
         ordering = ['-date_posted']
 
     def img_path(self):
-        return self.project_image.url
+        return socket.gethostname() + self.project_image.url
     
     def get_absolute_url(self):
         return f"/{self.slug}"
