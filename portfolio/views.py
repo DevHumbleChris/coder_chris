@@ -11,6 +11,9 @@ from .models import Project
 def HomeView(request, *args, **kwargs):
     return render(request, 'index.html', {})
 
+def ProjectDetail(request, *args, **kwargs):
+    return render(request, 'portfolio-details.html', {})
+
 def SendMail(request, *args, **kwargs):
     if not request.method == "POST":
         return HttpResponseRedirect(reverse('portfolio:home'))

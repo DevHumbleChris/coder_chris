@@ -2,38 +2,6 @@
 {% load static %}
 {% block content %}
 <!-- ======= Mobile nav toggle button ======= -->
-<i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-
-<!-- ======= Header ======= -->
-<header id="header">
-  <div class="d-flex flex-column">
-
-    <div class="profile">
-      <img src="{% static 'assets/img/20201230_125515.jpg' %}" alt="" class="img-fluid rounded-circle">
-      <h1 class="text-light"><a href="{% url 'portfolio:home' %}">Coder Chris </a></h1>
-      <div class="social-links mt-3 text-center">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
-    </div>
-
-    <nav id="navbar" class="nav-menu navbar">
-      <ul>
-        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-        <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-        <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a>
-        </li>
-        <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
-        <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-      </ul>
-    </nav><!-- .nav-menu -->
-  </div>
-</header><!-- End Header -->
-
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
   <div class="hero-container" data-aos="fade-in">
@@ -369,7 +337,7 @@
             <div class="portfolio-links">
               <a href="{% static 'assets/img/portfolio/portfolio-1.jpg' %}" data-gallery="portfolioGallery"
                 class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="{% url 'portfolio:project_detail' %}" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
         </div>
@@ -380,7 +348,7 @@
             <div class="portfolio-links">
               <a href="{% static 'assets/img/portfolio/portfolio-2.jpg' %}" data-gallery="portfolioGallery"
                 class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="{% url 'portfolio:project_detail' %}" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
         </div>
@@ -391,7 +359,7 @@
             <div class="portfolio-links">
               <a href="{% static 'assets/img/portfolio/portfolio-3.jpg' %}" data-gallery="portfolioGallery"
                 class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="{% url 'portfolio:project_detail' %}" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
         </div>
@@ -402,7 +370,7 @@
             <div class="portfolio-links">
               <a href="{% static 'assets/img/portfolio/portfolio-4.jpg' %}" data-gallery="portfolioGallery"
                 class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="{% url 'portfolio:project_detail' %}" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
         </div>
@@ -413,7 +381,7 @@
             <div class="portfolio-links">
               <a href="{% static 'assets/img/portfolio/portfolio-5.jpg' %}" data-gallery="portfolioGallery"
                 class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="{% url 'portfolio:project_detail' %}" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
         </div>
@@ -424,7 +392,7 @@
             <div class="portfolio-links">
               <a href="{% static 'assets/img/portfolio/portfolio-6.jpg' %}" data-gallery="portfolioGallery"
                 class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="{% url 'portfolio:project_detail' %}" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
         </div>
@@ -435,7 +403,7 @@
             <div class="portfolio-links">
               <a href="{% static 'assets/img/portfolio/portfolio-7.jpg' %}" data-gallery="portfolioGallery"
                 class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="{% url 'portfolio:project_detail' %}" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
         </div>
@@ -446,7 +414,7 @@
             <div class="portfolio-links">
               <a href="{% static 'assets/img/portfolio/portfolio-8.jpg' %}" data-gallery="portfolioGallery"
                 class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="{% url 'portfolio:project_detail' %}" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
         </div>
@@ -457,7 +425,7 @@
             <div class="portfolio-links">
               <a href="{% static 'assets/img/portfolio/portfolio-9.jpg' %}" data-gallery="portfolioGallery"
                 class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="{% url 'portfolio:project_detail' %}" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
         </div>
