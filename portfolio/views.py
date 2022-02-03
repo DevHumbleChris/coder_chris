@@ -7,6 +7,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .serializers import ProjectSerializer
 from .models import Project
+from rest_framework.permissions import IsAuthenticated
+from rest_framework import generics 
+from rest_framework import mixins 
 
 def HomeView(request, *args, **kwargs):
     return render(request, 'index.html', {})
@@ -37,16 +40,21 @@ def SendMail(request, *args, **kwargs):
         })
 
 
-class ProjectApi(APIView):
+class ProjectAPI(mixins.CreateModelMixin, mixins.ListModelMixin, mixins.DestroyModelMixin, mixins.UpdateModelMixin, generics.GenericAPIView):
+
+    # permission_classes = (IsAuthenticated, )
+
+    serializer_class = ProjectSerializer
+    queryset = Project.objects.all()
+    
     def get(self, request, *args, **kwargs):
-        qs = Project.objects.all()
-        serializer = ProjectSerializer(qs, many=True)
-        return Response(serializer.data)
+        return self.list(self, request, *args, **kwargs)
 
-    def post(self):
-        serializer = ProjectSerializer(data=request.data)
+    def post(self, request, *args, **kwargs):
+        return self.create(self, request, *args, **kwargs)
+    
+    def put(self, request, *args, **kwargs):
+        return self.update(self, request, *args, **kwargs)
 
-        if serializer.is_valid():
-            return Response(serializer.data)
-        else:
-            return Response(serializer.errors)
+    def delete(self, request, *args, **kwargs):
+        return self.destroy(self, request, *args, **kwargs)

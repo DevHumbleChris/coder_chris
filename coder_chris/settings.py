@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'portfolio',
+    'djoser',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -147,3 +149,9 @@ EMAIL_HOST_USER = 'coderchris254@gmail.com'
 EMAIL_HOST_PASSWORD = 'Am.Chris_KE254'
 MEDIA_DIR = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        'rest_framework.authentication.TokenAuthentication'
+    ]
+}
