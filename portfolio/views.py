@@ -12,7 +12,19 @@ from rest_framework import generics
 from rest_framework import mixins 
 
 def HomeView(request, *args, **kwargs):
-    return render(request, 'index.html', {})
+    django_projects = Project.objects.filter(primary_framework='Django')
+    all_projects = Project.objects.all()
+    express_projects = Project.objects.filter(primary_framework='Express')
+    vue_projects = Project.objects.filter(primary_framework='Vue')
+    
+    context = {
+        'all_projects': all_projects,
+        'vue_projects': vue_projects,
+        'django_projects': django_projects,
+        'express_projects': express_projects
+    }
+    print(context, "hell")
+    return render(request, 'index.html', context)
 
 def ProjectDetail(request, *args, **kwargs):
     return render(request, 'portfolio-details.html', {})
