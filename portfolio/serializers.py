@@ -5,6 +5,6 @@ class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
         fields = (
-            'name', 'slug', 'project_info', 'technologies_used', 'github_link', 'website', 'primary_language', 'get_absolute_url', 'date_posted', 'project_image', 'img_path'
+            'name', 'slug', 'project_info', 'technologies_used', 'github_link', 'website', 'primary_language', 'primary_framework', 'get_absolute_url', 'date_posted', 'project_image', 'img_path'
         )
 

@@ -9,7 +9,8 @@ class Project(models.Model):
     github_link = models.URLField()
     website = models.URLField()
     project_image = models.ImageField(upload_to="uploads/")
-    primary_language = models.CharField(max_length=50, default="Python")
+    primary_language = models.CharField(max_length=50)
+    primary_framework = models.CharField(max_length=50)
     date_posted = models.DateTimeField(auto_now_add=True)
 
     class Meta:
