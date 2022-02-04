@@ -23,7 +23,6 @@ def HomeView(request, *args, **kwargs):
         'django_projects': django_projects,
         'express_projects': express_projects
     }
-    print(context, "hell")
     return render(request, 'index.html', context)
 
 def ProjectDetail(request, *args, **kwargs):

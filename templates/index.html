@@ -312,14 +312,11 @@
     <div class="container">
 
       <div class="section-title">
-        <h2>Portfolio</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-          consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-          in iste officiis commodi quidem hic quas.</p>
+        <h2>Projects</h2>
       </div>
 
       <div class="row" data-aos="fade-up">
-        <div class="col-lg-12 d-flex justify-content-center">
+        <div class="col-lg-12">
           <ul id="portfolio-flters">
             <li data-filter="*" class="filter-active">All</li>
             <li data-filter=".filter-django">Django</li>
@@ -333,9 +330,9 @@
 
         {% if django_projects %}
         {% for django in django_projects %}
-        <div class="col-lg-4 col-md-6 portfolio-item filter-django">
+        <div class="col-lg-4 col-md-6 mx-auto portfolio-item filter-django">
           <div class="portfolio-wrap">
-            <img src="{{django.project_image}}" class="img-fluid" alt="{{django.name}}">
+            <img src="{{django.project_image}}" class="img-fluid img-thumbnail w-75 rounded" alt="{{django.name}}">
             <div class="portfolio-links">
               <a href="{{django.project_image}}" data-gallery="portfolioGallery"
                 class="portfolio-lightbox" title="{{django.name}}"><i class="bx bx-plus"></i></a>
@@ -348,9 +345,9 @@
 
         {% if vue_projects %}
         {% for vue in vue_projects %}
-        <div class="col-lg-4 col-md-6 portfolio-item filter-vue">
+        <div class="col-lg-4 col-md-6 mx-auto portfolio-item filter-vue">
           <div class="portfolio-wrap">
-            <img src="{{vue.project_image}}" class="img-fluid" alt="{{vue.name}}">
+            <img src="{{vue.project_image}}" class="img-fluid img-thumbnail w-75 rounded" alt="{{vue.name}}">
             <div class="portfolio-links">
               <a href="{{vue.project_image}}" data-gallery="portfolioGallery"
                 class="portfolio-lightbox" title="{{vue.name}}"><i class="bx bx-plus"></i></a>
@@ -363,9 +360,9 @@
 
         {% if express_projects %}
         {% for express in express_projects %}
-        <div class="col-lg-4 col-md-6 portfolio-item filter-express">
+        <div class="col-lg-4 col-md-6 mx-auto portfolio-item filter-express">
         <div class="portfolio-wrap">
-          <img src="{{express.project_image}}" class="img-fluid" alt="{{express.name}}">
+          <img src="{{express.project_image}}" class="img-fluid img-thumbnail w-75 rounded" alt="{{express.name}}">
           <div class="portfolio-links">
             <a href="{{express.project_image}}" data-gallery="portfolioGallery"
               class="portfolio-lightbox" title="{{express.name}}"><i class="bx bx-plus"></i></a>
@@ -381,7 +378,7 @@
     </div>
   </section><!-- End Portfolio Section -->
 
-  <!-- ======= Services Section ======= -->
+  <!-- ======= Services Section ======= 
   <section id="services" class="services">
     <div class="container">
 
@@ -432,9 +429,9 @@
       </div>
 
     </div>
-  </section><!-- End Services Section -->
+  </section> End Services Section -->
 
-  <!-- ======= Testimonials Section ======= -->
+  <!-- ======= Testimonials Section ======= 
   <section id="testimonials" class="testimonials section-bg">
     <div class="container">
 
@@ -460,7 +457,7 @@
               <h3>Saul Goodman</h3>
               <h4>Ceo &amp; Founder</h4>
             </div>
-          </div><!-- End testimonial item -->
+          </div> End testimonial item
 
           <div class="swiper-slide">
             <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
@@ -474,7 +471,7 @@
               <h3>Sara Wilsson</h3>
               <h4>Designer</h4>
             </div>
-          </div><!-- End testimonial item -->
+          </div> End testimonial item 
 
           <div class="swiper-slide">
             <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
@@ -488,7 +485,7 @@
               <h3>Jena Karlis</h3>
               <h4>Store Owner</h4>
             </div>
-          </div><!-- End testimonial item -->
+          </div><!-- End testimonial item 
 
           <div class="swiper-slide">
             <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
@@ -502,7 +499,7 @@
               <h3>Matt Brandon</h3>
               <h4>Freelancer</h4>
             </div>
-          </div><!-- End testimonial item -->
+          </div><!-- End testimonial item 
 
           <div class="swiper-slide">
             <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
@@ -516,14 +513,14 @@
               <h3>John Larson</h3>
               <h4>Entrepreneur</h4>
             </div>
-          </div><!-- End testimonial item -->
+          </div><!-- End testimonial item
 
         </div>
         <div class="swiper-pagination"></div>
       </div>
 
     </div>
-  </section><!-- End Testimonials Section -->
+  </section> End Testimonials Section -->
 
   <!-- ======= Contact Section ======= -->
   <section id="contact" class="contact">
