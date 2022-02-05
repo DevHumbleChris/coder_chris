@@ -6,7 +6,7 @@ from django.core.mail import send_mail
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .serializers import ProjectSerializer
-from .models import Project
+from .models import Project, Images
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import generics 
 from rest_framework import mixins 
