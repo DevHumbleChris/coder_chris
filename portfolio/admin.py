@@ -7,7 +7,7 @@ class ProjectImagesInline(admin.StackedInline):
 
 class ProjectAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Project Information', {'fields': ['name', 'project_info', 'technologies_used', 'github_link', 'website', 'project_image', 'primary_language', 'primary_framework']}, ),
+        ('Project Information', {'fields': ['name', 'slug', 'project_info', 'technologies_used', 'github_link', 'website', 'project_image', 'primary_language', 'primary_framework']}, ),
     ]
     inlines = [ProjectImagesInline]
 
