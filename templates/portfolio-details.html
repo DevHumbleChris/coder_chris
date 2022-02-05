@@ -6,10 +6,10 @@
   <section id="breadcrumbs" class="breadcrumbs">
     <div class="container">
       <div class="d-flex justify-content-between align-items-center">
-        <h2>Portfoio Details</h2>
+        <h2>Project Details</h2>
         <ol>
           <li><a href="{% url 'portfolio:home' %}">Home</a></li>
-          <li>Portfoio Details</li>
+          <li><a href="{% url 'portfolio:project_detail' Project.id Project.slug %}">{{Project.slug}}</a></li>
         </ol>
       </div>
 
@@ -26,17 +26,11 @@
           <div class="portfolio-details-slider swiper">
             <div class="swiper-wrapper align-items-center">
 
+              {% for image in Project.images_set.all %}
               <div class="swiper-slide">
-                <img src="{% static 'assets/img/portfolio/portfolio-details-1.jpg' %}" alt="">
+                <img src="{{image.project_image}}" alt="{{Project.name}}">
               </div>
-
-              <div class="swiper-slide">
-                <img src="{% static 'assets/img/portfolio/portfolio-details-2.jpg' %}" alt="">
-              </div>
-
-              <div class="swiper-slide">
-                <img src="{% static 'assets/img/portfolio/portfolio-details-3.jpg' %}" alt="">
-              </div>
+              {% endfor %}
 
             </div>
             <div class="swiper-pagination"></div>
@@ -45,28 +39,27 @@
 
         <div class="col-lg-4">
           <div class="portfolio-info">
-            <h3>Project information</h3>
-            <ul>
-              <li><strong>Category</strong>: Web design</li>
-              <li><strong>Client</strong>: ASU Company</li>
-              <li><strong>Project date</strong>: 01 March, 2020</li>
-              <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-            </ul>
-          </div>
-          <div class="portfolio-description">
-            <h2>This is an example of portfolio detail</h2>
-            <p>
-              Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia.
-              Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia
-              accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt
-              eius.
-            </p>
+            <h3>{{Project.name}}</h3>
+            <div class="portfolio-description">
+              <ul>
+                <li><strong>Langauge</strong>: {{Project.primary_language}}</li>
+                <li><strong>Primary Framework</strong>: {{Project.primary_framework}}</li>
+                <li><strong>Technologies Used</strong>: {{Project.technologies_used}}</li>
+                <li><strong><i class="fab fa-github"></i> GitHub Repository</strong>: <a
+                    href="{{Project.github_link}}">{{Project.github_link}}</a></li>
+                <li><strong><i class="fas fa-web"></i>Website</strong>: <a
+                    href="{{Project.website}}">{{Project.website}}</a></li>
+              </ul>
+              <div class="portfolio-description">
+                <h2>Project Information</h2>
+                <p>
+                  {{Project.project_info}}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
-
-    </div>
   </section><!-- End Portfolio Details Section -->
 
 </main><!-- End #main -->

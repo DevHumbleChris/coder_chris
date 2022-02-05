@@ -5,7 +5,7 @@ from django.conf import settings
 from django.core.mail import send_mail
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .serializers import ProjectSerializer
+from .serializers import ProjectSerializer, ImageSerializer
 from .models import Project, Images
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import generics 
@@ -25,8 +25,13 @@ def HomeView(request, *args, **kwargs):
     }
     return render(request, 'index.html', context)
 
-def ProjectDetail(request, *args, **kwargs):
-    return render(request, 'portfolio-details.html', {})
+def ProjectDetail(request, project_id, project_slug, *args, **kwargs):
+    project = Project.objects.filter(slug=project_slug).get(pk=project_id)
+    context = {
+        'Project': project
+    }
+    print(project)
+    return render(request, 'portfolio-details.html', context)
 
 def SendMail(request, *args, **kwargs):
     if not request.method == "POST":
@@ -69,3 +74,10 @@ class ProjectAPI(mixins.CreateModelMixin, mixins.ListModelMixin, mixins.DestroyM
 
     def delete(self, request, *args, **kwargs):
         return self.destroy(self, request, *args, **kwargs)
+
+class ImagesAPI(APIView):
+    def get(self, request, project_id, project_slug, *args, **kwargs):
+        project = Project.objects.filter(slug=project_slug).get(pk=project_id)
+        qs = project.images_set.all()
+        serializer = ImageSerializer(qs, many=True)
+        return Response(serializer.data)

@@ -336,7 +336,7 @@
             <div class="portfolio-links">
               <a href="{{django.project_image}}" data-gallery="portfolioGallery"
                 class="portfolio-lightbox" title="{{django.name}}"><i class="bx bx-plus"></i></a>
-              <a href="{% url 'portfolio:project_detail' %}" title="{{django.name}}"><i class="bx bx-link"></i></a>
+              <a href="{% url 'portfolio:project_detail' django.id django.slug %}" title="{{django.name}}"><i class="bx bx-link"></i></a>
             </div>
           </div>
         </div>
@@ -351,7 +351,7 @@
             <div class="portfolio-links">
               <a href="{{vue.project_image}}" data-gallery="portfolioGallery"
                 class="portfolio-lightbox" title="{{vue.name}}"><i class="bx bx-plus"></i></a>
-              <a href="{% url 'portfolio:project_detail' %}" title="{{vue.name}}"><i class="bx bx-link"></i></a>
+              <a href="{% url 'portfolio:project_detail' vue.id vue.slug %}" title="{{vue.name}}"><i class="bx bx-link"></i></a>
             </div>
           </div>
         </div>
@@ -366,7 +366,7 @@
           <div class="portfolio-links">
             <a href="{{express.project_image}}" data-gallery="portfolioGallery"
               class="portfolio-lightbox" title="{{express.name}}"><i class="bx bx-plus"></i></a>
-            <a href="{% url 'portfolio:project_detail' %}" title="{{express.name}}"><i class="bx bx-link"></i></a>
+            <a href="{% url 'portfolio:project_detail' express.id express.slug %}" title="{{express.name}}"><i class="bx bx-link"></i></a>
           </div>
         </div>
       </div>
