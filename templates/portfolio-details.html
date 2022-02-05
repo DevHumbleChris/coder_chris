@@ -28,7 +28,7 @@
 
               {% for image in Project.images_set.all %}
               <div class="swiper-slide">
-                <img src="{{image.project_image}}" alt="{{Project.name}}">
+                <img src="{{image.img_path}}" alt="{{Project.name}}">
               </div>
               {% endfor %}
 

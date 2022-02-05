@@ -33,3 +33,7 @@ class Images(models.Model):
     name = models.ForeignKey(Project, on_delete=models.CASCADE)
     project_image = models.ImageField(upload_to='uploads/')
     date_posted = models.DateTimeField(auto_now_add=True)
+
+    def img_path(self):
+        return 'https://coder-chris.herokuapp.com' + self.project_image
+
