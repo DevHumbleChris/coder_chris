@@ -35,5 +35,5 @@ class Images(models.Model):
     date_posted = models.DateTimeField(auto_now_add=True)
 
     def img_path(self):
-        return 'https://coder-chris.herokuapp.com' + self.project_image
+        return 'https://coder-chris.herokuapp.com' + self.project_image.url
 
