@@ -81,3 +81,8 @@ class ImagesAPI(APIView):
         qs = project.images_set.all()
         serializer = ImageSerializer(qs, many=True)
         return Response(serializer.data)
+
+
+def page_not_found_404(request, exception):
+    return render(request, '404.html', status=404)
+

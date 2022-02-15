@@ -10,3 +10,5 @@ urlpatterns = [
     path('api/v1/projects', ProjectAPI.as_view(), name='api_projects'),
     path('api/v1/projects/<int:project_id>/<slug:project_slug>', ImagesAPI.as_view(), name='images_api')
 ]
+
+handler404 = "portfolio.views.page_not_found_404"
